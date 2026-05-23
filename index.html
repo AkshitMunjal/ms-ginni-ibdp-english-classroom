@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ginni Munjal is an IB-certified English educator specialising in IB DP, MYP, Cambridge, and IGCSE English." />
+  <title>Ginni Munjal | IBDP English Educator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0e1a14;
+      --ink-mid: #2c3d33;
+      --muted: #677a70;
+      --cream: #f9f5ef;
+      --cream-dark: #ede9e1;
+      --white: #ffffff;
+      --forest: #1a3d2b;
+      --sage: #8aab96;
+      --sage-pale: #e8f0eb;
+      --gold: #c49a3c;
+      --gold-pale: #f5edd9;
+      --line: #ddd8ce;
+      --container: 1160px;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 68px; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-weight: 300;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4 { margin-top: 0; font-family: var(--font-display); font-weight: 600; }
+    p { margin-top: 0; }
+
+    .skip-link {
+      position: absolute; left: 1rem; top: -3rem;
+      padding: 0.6rem 1rem; background: var(--forest);
+      color: #fff; border-radius: 4px; z-index: 1000;
+      font-family: var(--font-body);
+    }
+    .skip-link:focus { top: 1rem; }
+
+    /* ── NAV ── */
+    .site-nav {
+      position: sticky; top: 0; z-index: 50;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 2.5rem;
+      height: 68px;
+      background: rgba(249, 245, 239, 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: var(--font-display);
+      font-size: 1.15rem; font-weight: 600; letter-spacing: 0.01em;
+      color: var(--forest);
+    }
+
+    .brand-mark {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--forest);
+      color: #fff;
+      display: grid; place-items: center;
+      font-size: 0.78rem; font-weight: 600;
+      font-family: var(--font-body);
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; gap: 2rem;
+      font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--ink-mid);
+    }
+
+    .nav-links a {
+      position: relative; padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 0; height: 1.5px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--forest); }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* ── ABOUT HERO (first section) ── */
+    .about-hero {
+      background: var(--forest);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-hero-bg {
+      position: absolute;
+      bottom: -4rem; right: -2rem;
+      font-family: var(--font-display);
+      font-size: clamp(14rem, 24vw, 26rem);
+      font-weight: 700;
+      color: rgba(255,255,255,0.035);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: -0.04em;
+    }
+
+    .about-hero-inner {
+      width: min(100%, var(--container));
+      margin: 0 auto;
+      padding: 4.5rem 2.5rem 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Top strip: badge + actions */
+    .about-hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 999px;
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .hero-actions {
+      display: flex; gap: 0.75rem; flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.65rem 1.35rem;
+      border-radius: 4px;
+      font-family: var(--font-body);
+      font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      border: 1px solid transparent;
+      transition: all 0.22s ease;
+    }
+    .btn-light { background: #fff; color: var(--forest); }
+    .btn-light:hover { background: var(--gold-pale); }
+    .btn-ghost {
+      background: transparent;
+      color: rgba(255,255,255,0.82);
+      border-color: rgba(255,255,255,0.28);
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.45);
+    }
+
+    /* Main grid: big name left, info panel right */
+    .about-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 3rem;
+      align-items: end;
+    }
+
+    .about-hero-name {
+      font-size: clamp(4.5rem, 9vw, 8.5rem);
+      font-weight: 300;
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.75rem;
+      color: #fff;
+    }
+    .about-hero-name em {
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .about-hero-bio {
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.62);
+      line-height: 1.85;
+      max-width: 520px;
+      margin-bottom: 1.25rem;
+    }
+
+    .cert-link {
+      font-size: 0.82rem;
+      color: var(--gold);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .cert-link:hover { opacity: 0.8; }
+
+    /* Info panel on right */
+    .about-hero-panel {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .panel-item strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.05rem; font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.2rem;
+    }
+    .panel-item span {
+      font-size: 0.86rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+    }
+    .panel-item a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+    .panel-divider { height: 1px; background: rgba(255,255,255,0.1); }
+
+    /* Contact + stats strip below grid */
+    .about-hero-bottom {
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .contact-row {
+      display: flex; gap: 1.5rem; flex-wrap: wrap;
+    }
+
+    .contact-pill {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.65);
+      transition: color 0.2s;
+    }
+    .contact-pill:hover { color: #fff; }
+    .contact-pill-icon {
+      width: 28px; height: 28px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.1);
+      display: grid; place-items: center;
+      font-size: 0.72rem;
+    }
+
+    .stat-strip {
+      display: flex; gap: 2.5rem;
+    }
+    .stat-item { text-align: right; }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2.4rem; font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.1rem;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.03em;
+    }
+
+    /* ── SHARED SECTION STYLES ── */
+    .section { padding: 5.5rem 2.5rem; }
+
+    .section-inner {
+      width: min(100%, var(--container));
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--sage);
+      margin-bottom: 0.75rem;
+    }
+    .section-tag::before {
+      content: ''; width: 24px; height: 1px; background: var(--sage);
+    }
+
+    .section-title {
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+    .section-title em { font-style: italic; font-weight: 600; color: var(--forest); }
+
+    .section-subtitle {
+      color: var(--muted); font-size: 0.95rem;
+      max-width: 520px; line-height: 1.8;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* ── CARDS ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.75rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 10px 36px rgba(26,61,43,0.1);
+      transform: translateY(-2px);
+    }
+
+    .card-tag {
+      display: inline-block;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      background: var(--sage-pale);
+      color: var(--forest);
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.3rem; font-weight: 600;
+      color: var(--ink); margin-bottom: 0.75rem; line-height: 1.2;
+    }
+
+    .card p {
+      font-size: 0.9rem; color: var(--muted);
+      line-height: 1.75; margin-bottom: 0.75rem;
+    }
+
+    .card ul {
+      margin: 0; padding-left: 0; list-style: none;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .card ul li {
+      font-size: 0.88rem; color: var(--ink-mid);
+      padding-left: 1.2rem; position: relative; line-height: 1.6;
+    }
+    .card ul li::before {
+      content: '—'; position: absolute; left: 0;
+      color: var(--gold); font-size: 0.7rem; top: 0.2rem;
+    }
+    .card ul li strong { color: var(--ink); font-weight: 500; }
+
+    /* ── IO LINK LIST ── */
+    .io-link-list {
+      display: flex; flex-direction: column; gap: 0;
+      margin: 0; padding: 0; list-style: none;
+    }
+    .io-link-list li a {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.88rem; color: var(--forest);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--cream-dark);
+      transition: color 0.2s;
+    }
+    .io-link-list li:last-child a { border-bottom: none; }
+    .io-link-list li a::before { content: '↗'; font-size: 0.75rem; color: var(--gold); }
+    .io-link-list li a:hover { color: var(--gold); }
+
+    /* ── DOC BUTTON ── */
+    .doc-btn {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      margin-top: 1.4rem;
+      padding: 0.6rem 1.1rem;
+      border-radius: 6px;
+      background: var(--gold-pale);
+      border: 1px solid rgba(196,154,60,0.35);
+      color: #7a5c1a;
+      font-family: var(--font-body);
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+    .doc-btn:hover {
+      background: #ecd9a8;
+      border-color: rgba(196,154,60,0.6);
+      transform: translateY(-1px);
+    }
+    .doc-btn svg { flex-shrink: 0; }
+
+    .doc-btn-inv {
+      background: rgba(196,154,60,0.15);
+      border-color: rgba(196,154,60,0.3);
+      color: var(--gold);
+    }
+    .doc-btn-inv:hover {
+      background: rgba(196,154,60,0.25);
+      border-color: rgba(196,154,60,0.5);
+    }
+
+    /* ── THEORIES (dark section) ── */
+    .theories-section { background: var(--forest); color: #fff; }
+    .theories-section .section-tag { color: rgba(255,255,255,0.45); }
+    .theories-section .section-tag::before { background: rgba(255,255,255,0.25); }
+    .theories-section .section-title { color: #fff; }
+    .theories-section .section-title em { color: rgba(255,255,255,0.75); }
+    .theories-section .section-subtitle { color: rgba(255,255,255,0.45); }
+    .theories-section .section-header { border-bottom-color: rgba(255,255,255,0.1); }
+
+    .theory-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .theory-card {
+      border: 1px solid rgba(255,255,255,0.11);
+      border-radius: 14px;
+      padding: 2rem;
+      position: relative; overflow: hidden;
+      transition: background 0.25s;
+    }
+    .theory-card:hover { background: rgba(255,255,255,0.06); }
+
+    .theory-num {
+      font-family: var(--font-display);
+      font-size: 5rem; font-weight: 700;
+      color: rgba(255,255,255,0.05);
+      line-height: 1;
+      position: absolute; top: 0.5rem; right: 1rem;
+      pointer-events: none;
+    }
+
+    .theory-card h3 {
+      font-size: 1.35rem; font-weight: 600;
+      color: #fff; margin-bottom: 0.75rem; position: relative;
+    }
+    .theory-card p {
+      font-size: 0.9rem; color: rgba(255,255,255,0.55);
+      line-height: 1.75; margin: 0; position: relative;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #0a1510;
+      color: rgba(255,255,255,0.4);
+      padding: 2.25rem 2.5rem;
+    }
+    .footer-inner {
+      width: min(100%, var(--container));
+      margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 2rem; flex-wrap: wrap;
+    }
+    .footer-brand {
+      font-family: var(--font-display); font-size: 1.1rem;
+      color: rgba(255,255,255,0.65);
+    }
+    .footer-links {
+      display: flex; gap: 1.5rem;
+      font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .footer-links a { color: rgba(255,255,255,0.4); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .about-hero-top   { animation: fadeUp 0.6s ease both; }
+    .about-hero-name  { animation: fadeUp 0.7s 0.1s ease both; }
+    .about-hero-bio   { animation: fadeUp 0.7s 0.2s ease both; }
+    .cert-link        { animation: fadeUp 0.7s 0.25s ease both; }
+    .about-hero-panel { animation: fadeUp 0.8s 0.15s ease both; }
+    .about-hero-bottom{ animation: fadeUp 0.7s 0.3s ease both; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .about-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .about-hero-panel { order: -1; }
+      .about-hero-bottom {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .stat-strip { justify-content: flex-start; }
+      .stat-item { text-align: left; }
+      .theory-grid { grid-template-columns: 1fr 1fr; }
+      .section-header { flex-direction: column; align-items: flex-start; }
+      .section { padding: 4rem 1.5rem; }
+    }
+
+    @media (max-width: 640px) {
+      .site-nav {
+        padding: 0.75rem 1.25rem;
+        height: auto; flex-wrap: wrap; gap: 0.5rem;
+      }
+      .nav-links { gap: 0.75rem 1.25rem; font-size: 0.72rem; flex-wrap: wrap; }
+      .about-hero-inner { padding: 2.5rem 1.25rem 2.5rem; }
+      .about-hero-name { font-size: 3.8rem; }
+      .theory-grid, .cards-grid { grid-template-columns: 1fr; }
+      .contact-row { flex-direction: column; gap: 0.75rem; }
+      .stat-strip { gap: 1.5rem; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- NAV -->
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a class="brand" href="#about">
+      <span class="brand-mark">GM</span>
+      Ginni Munjal
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#paper2">Paper 2</a></li>
+      <li><a href="#io">IO</a></li>
+      <li><a href="#readings">Readings</a></li>
+      <li><a href="#strategies">Strategies</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+
+    <!-- ── 01 ABOUT (opening section) ── -->
+    <section id="about" class="about-hero">
+      <div class="about-hero-bg" aria-hidden="true">GM</div>
+      <div class="about-hero-inner">
+
+        <!-- Badge + CTA row -->
+        <div class="about-hero-top">
+          <p class="hero-badge">IB Certified · Cat. 1 · Diploma Programme</p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="mailto:munjal.ginni@live.com">✉ Email Me</a>
+            <a class="btn btn-ghost" href="resume.pdf" download>↓ Resume</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <!-- Name + bio left | panel right -->
+        <div class="about-hero-grid">
+          <div>
+            <h1 class="about-hero-name">Ginni<br><em>Munjal</em></h1>
+            <p class="about-hero-bio">
+              Language and literature have always been central to my work not just as a subject, but as the thing that connects students to ideas, to each other, and to the wider world. In a room full of curious learners, that curiosity is not a nice extra; it is the foundation of everything.
+            </p>
+          </div>
+
+          <aside class="about-hero-panel" aria-label="Quick facts">
+            <div class="panel-item">
+              <strong>IB Certification</strong>
+              <span><a href="https://drive.google.com/file/d/11Hg7_1j15tP-hF6v6CNigTnKyc0LF2pd/view" target="_blank" rel="noopener noreferrer">View Certificate ↗</a></span>
+            </div>
+            <div class="panel-divider"></div>
+            <div class="panel-item">
+              <strong>Teaching Focus</strong>
+              <span>
+                Critical Thinking, Close Reading, Textual Analysis, Written & Oral Communication, Global Issue Formation and Comparative Analysis
+              </span>
+            </div>
+            <div class="panel-divider"></div>
+            <div class="panel-item">
+              <strong>Experience</strong>
+              <span>Five years of progressive English teaching across IB, Cambridge, IGCSE, and CBSE settings.</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 02 PAPER 2 ── -->
+    <section id="paper2" class="section">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <p class="section-tag">02 — Paper 2</p>
+            <h2 class="section-title">Comparative<br><em>Essay</em></h2>
+          </div>
+          <p class="section-subtitle">
+            A structured coverage of the literary texts and themes explored for SL and HL Paper 2.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <div class="card">
+            <span class="card-tag">SL &amp; HL</span>
+            <h3>Core Literary Texts</h3>
+            <ul>
+              <li>Novel — <strong>The Dark Room</strong> by R.K. Narayan</li>
+              <li>Drama — <strong>A Doll's House</strong> by Henrik Ibsen</li>
+              <li>Graphic Memoir — <strong>Persepolis</strong> (non-fiction)</li>
+            </ul>
+            <a class="doc-btn" href="https://docs.google.com/document/d/1xCGoAGsYjTjcRpKvKVU4iMYGbjhyYcbgQFR6ncOjOd8/edit?tab=t.0" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              View Document ↗
+            </a>
+          </div>
+
+          <div class="card">
+            <span class="card-tag">HL Only</span>
+            <h3>Higher Level Extension</h3>
+            <ul>
+              <li>Novel — <strong>The Kite Runner</strong> by Khaled Hosseini</li>
+            </ul>
+            <p style="margin-top:1rem;">
+              HL students build additional comparative depth through a fourth literary work, broadening thematic and stylistic analysis.
+            </p>
+            <a class="doc-btn" href="https://docs.google.com/document/d/1E9F6MLHyoG4mlDuBupjM9p9Pd9tIs42OfZnHcMHFc4s/edit?tab=t.0" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              View Document ↗
+            </a>
+          </div>
+
+          <div class="card">
+            <span class="card-tag">Approach</span>
+            <h3>How We Prepare</h3>
+            <p>Students are guided through structured comparative frameworks, close-reading annotations, and essay planning that connects theme, form, and context across texts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 03 IO ── -->
+    <section id="io" class="section" style="background: var(--cream-dark);">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <p class="section-tag">03 — IO</p>
+            <h2 class="section-title">Interactive<br><em>Orals</em></h2>
+          </div>
+          <p class="section-subtitle">
+            Guided exploration of non-literary bodies of work for the Internal Assessment component.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <div class="card">
+            <span class="card-tag">Non-Literary Works</span>
+            <h3>Bodies of Work</h3>
+            <ul class="io-link-list">
+              <li>Liza Donnelly Cartoons</li>
+              <li>Dove Real Beauty Campaign</li>
+              <li>Past Lives (Film)</li>
+              <li>Banksy Street Art</li>
+              <li>Lainey Molnar — Instagram Posts</li>
+            </ul>
+            <a class="doc-btn" href="https://docs.google.com/document/d/1MT-pN5umIeN4-RxUoXN64rs4KXfeNI8VY0Ab1C8Ltdk/edit?tab=t.0" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              View Document ↗
+            </a>
+          </div>
+
+          <div class="card">
+            <span class="card-tag">IO Support</span>
+            <h3>What I Help Students Build</h3>
+            <p>Oral confidence, a strong line of inquiry, and purposeful connection of non-literary material to the central theme.</p>
+            <ul>
+              <li>Structure for AOI and contextual understanding</li>
+              <li>Prompt-based oral rehearsal and feedback</li>
+              <li>Integration of visual, multimedia, and cultural references</li>
+            </ul>
+            <a class="doc-btn" href="https://docs.google.com/document/d/1j2kTPV2pUhY0YZfKlm3x9n3w1JLSQTIRNE58GXK6aYk/edit?tab=t.0" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              View Document ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 04 READINGS / THEORIES ── -->
+    <section id="readings" class="section theories-section">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <p class="section-tag">04 — Readings</p>
+            <h2 class="section-title">Literary<br><em>Theories</em></h2>
+          </div>
+          <p class="section-subtitle">
+            Core literary theory texts and themes used to deepen interpretation and comparative thinking.
+          </p>
+        </div>
+
+        <div class="theory-grid">
+          <div class="theory-card">
+            <span class="theory-num" aria-hidden="true">01</span>
+            <h3>Feminist Theory</h3>
+            <p>Examining voice, agency, and representation through the lens of gender. Students question power structures embedded in canonical texts.</p>
+          </div>
+          <div class="theory-card">
+            <span class="theory-num" aria-hidden="true">02</span>
+            <h3>Marxist Theory</h3>
+            <p>Analysing ideology, class, and economic structures in literature to reveal how texts both reflect and challenge societal hierarchies.</p>
+          </div>
+          <div class="theory-card">
+            <span class="theory-num" aria-hidden="true">03</span>
+            <h3>Postcolonial Theory</h3>
+            <p>Interrogating colonial narratives, identity, and cultural hybridity. Students learn to read texts from and about formerly colonised spaces with critical nuance.</p>
+          </div>
+        </div>
+
+        <p style="margin-top:2rem; font-size:0.9rem; color:rgba(255,255,255,0.42);">
+          These readings help students question voice, power, representation, and ideology while building more sophisticated analytical responses.
+        </p>
+        <a class="doc-btn doc-btn-inv" href="https://docs.google.com/document/d/1xIbNMpuFTtbEyhw-xPHOoabp8_-C_G26huRH4iBYfvU/edit?tab=t.0" target="_blank" rel="noopener noreferrer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          View Document ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- ── 05 STRATEGIES ── -->
+    <section id="strategies" class="section">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <p class="section-tag">05 — Teaching Strategies</p>
+            <h2 class="section-title">In the<br><em>Classroom</em></h2>
+          </div>
+          <p class="section-subtitle">
+            Practical strategies that strengthen interpretation, academic writing, and student confidence.
+          </p>
+          <a class="doc-btn" href="https://docs.google.com/document/d/1zUNNs97XXgL5B3-gUu51DJpYxXm4C_W3f_Ic-9weAiY/edit?tab=t.0" target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            View Document ↗
+          </a>
+        </div>
+
+        <div class="cards-grid">
+          <div class="card">
+            <span class="card-tag">Inquiry</span>
+            <h3>Inquiry-Based Learning</h3>
+            <p>Every lesson begins with questions that invite close reading, curiosity, and evidence-led discussion.</p>
+            <ul>
+              <li>Textual annotations and thesis-building</li>
+              <li>Schema-building through comparison and contrast</li>
+              <li>Structured discussion routines for mixed-ability classes</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="card-tag">Assessment</span>
+            <h3>Assessment for Growth</h3>
+            <p>Students demonstrate understanding through purposeful planning, drafting, and reflection.</p>
+            <ul>
+              <li>Essay planning using clear claims and contextual analysis</li>
+              <li>Oral rehearsal for IO and higher-level discussion</li>
+              <li>Feedback language that builds independence and confidence</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="card-tag">Philosophy</span>
+            <h3>The Underlying Belief</h3>
+            <p>Literature is not just a subject — it is the thing that connects students to ideas, to each other, and to the wider world. Curiosity is not a nice extra; it is the foundation of everything.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Ginni Munjal — IBDP English Educator</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="mailto:munjal.ginni@live.com">Email</a>
+        <a href="resume.pdf" download>Resume</a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://drive.google.com/file/d/11Hg7_1j15tP-hF6v6CNigTnKyc0LF2pd/view" target="_blank" rel="noopener noreferrer">IB Certificate</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
